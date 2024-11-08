@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --background: rgb(38, 79, 182);
   --foreground: #171717;
 }
 
@@ -16,6 +16,238 @@
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background: rgba(36,40,50,1);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* body {
+  font-family: 'Arial', sans-serif;
+  background-color: #1E293B;
+  color: #fff;
+} */
+
+/* Navbar Styles */
+nav {
+  background-color: #1E293B;
+  padding: 20px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav ul li {
+  list-style: none;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+nav a {
+  color: white;
+  background-color: #333;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  background-color: #f0a500;
+}
+
+/* Content Section (Image and Text) */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.content .image-container {
+  
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.content .image-container img {
+  max-width: 150px;
+  max-height: 150px;
+  border-radius: 50%;
+}
+
+.content h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.content h2 {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.content p {
+  font-size: 1rem;
+  margin-top: 15px;
+  padding: 0 20px;
+  max-width: 700px;
+  line-height: 1.6;
+}
+
+/* Button Styles */
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.buttons button {
+  background-color: #333;
+  color: white;
+  padding: 10px 30px;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.buttons button:hover {
+  background-color: #f0a500;
+}
+
+/* Media Queries */
+
+/* For screens smaller than 768px (Mobile view) */
+@media screen and (max-width: 768px) {
+  /* Stack Image and Text Vertically */
+  .content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .content .image-container {
+    margin-top: 10px;
+  }
+
+  .content h1 {
+    font-size: 1.8rem;
+  }
+
+  .content h2 {
+    font-size: 1.2rem;
+  }
+
+  .content p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .content .image-container img {
+    max-width: 120px; /* Adjust image size for smaller screens */
+    max-height: 120px; /* Adjust image size for smaller screens */
+  }
+}
+
+/* For screens from 495px to 641px (Small screen adjustment) */
+@media screen and (min-width: 495px) and (max-width: 641px) {
+  .content .image-container img {
+    max-width: 120px;
+    max-height: 120px;
+  }
+
+  .content h1 {
+    font-size: 1.4rem;
+  }
+
+  .content h2 {
+    font-size: 1.1rem;
+  }
+
+  .content p {
+    font-size: 0.9rem;
+    padding: 0 10px;
+    max-width: 90%; /* Ensures text fits well */
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+}
+
+
+
+
+
+/* For larger screens (Tablets and above) */
+@media screen and (min-width: 768px) {
+  .content .image-container img {
+    max-width: 180px;  /* Adjust image size for tablet */
+    max-height: 180px; /* Adjust image size for tablet */
+  }
+}
+
+/* For larger screens (Laptop and above) */
+@media screen and (min-width: 1024px) {
+  .content .image-container img {
+    max-width: 300px;  /* Adjust image size for laptop */
+    max-height: 300px; /* Adjust image size for laptop */
+  }
+}
+
+/* Default (for mobile) */
+.content .image-container img {
+  max-width: 150px;
+  max-height: 150px;
+}
+
+.project-container {
+  background-color: #2d2d2d; /* Dark background for each project */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+/* Define keyframes for sliding animation */
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateX(100px); /* Start from right */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* End at normal position */
+  }
+}
+
+.image-container,
+.text-container,
+button {
+  animation: slide-in 1s ease-out forwards;
+}
+
+
